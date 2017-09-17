@@ -1,4 +1,4 @@
-package com.amndeep.spoilerbot
+package com.amndeep.pingbot
 
 import scala.io.Source
 import scala.util.{Failure, Success, Try}
@@ -6,12 +6,12 @@ import scala.util.{Failure, Success, Try}
 import sx.blah.discord.api.ClientBuilder
 
 object Driver {
-  def login(token: String): Try[SpoilerBot] = {
+  def login(token: String): Try[PingBot] = {
     val builder = new ClientBuilder
     builder.withToken(token)
     Try({
       val client = builder.login
-      new SpoilerBot(client)
+      new PingBot(client)
     })
   }
 
